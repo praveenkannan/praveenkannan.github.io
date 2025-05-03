@@ -1,28 +1,27 @@
 # Site settings
-title: SharededInsights
+title: ShardedInsights
 email: praveen7484@gmail.com
 description: >- 
   ./configure --with-distributed-systems --enable-data-science
   Signals, patterns, and scalable solutions from the command line to the cloud.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://sigsage.io" # the base hostname & protocol for your site
+baseurl: "" # empty for user/organization site
+url: "https://shardedinsights.github.io" # the base hostname & protocol for your site
 
 # Author information
 author:
   name: Praveen Kannan
   bio: >-
-    #!/usr/bin/env human
-    Distributed systems architect debugging complexity at scale.
-    Signal processor, pattern matcher, failure investigator.
-  location: "~/current/location"
+    Technology leader specializing in distributed systems architecture and scalable data solutions.
+    Solving enterprise-scale challenges with elegant technical design and strategic thinking.
+  location: "Global"
   twitter: sigpipe
   github: praveenkannan
   linkedin: praveenkannan
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-hacker # GitHub Pages supported theme with a hacker/terminal aesthetic
-remote_theme: pages-themes/hacker@v0.2.0 # Ensures the theme works with GitHub Pages
+theme: jekyll-theme-minimal # Clean, professional theme better for leadership presence
+remote_theme: pages-themes/minimal@v0.2.0 # Ensures the theme works with GitHub Pages
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -30,11 +29,9 @@ plugins:
   - jekyll-remote-theme # Added to support remote themes
 
 # Theme-specific settings
-theme_settings:
-  show_downloads: false # Hide download buttons in header
-  google_analytics: # Add your GA ID if needed
-  header_text: "~/distributed-systems $ ./share-insights"
-  syntax_highlighting: true
+logo: /assets/img/logo.png # Add a professional logo/headshot
+show_downloads: false
+google_analytics: G-XXXXXXXXXX # Replace with your actual Measurement ID
 
 # Navigation - Unix-style naming
 header_pages:
