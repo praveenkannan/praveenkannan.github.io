@@ -1,5 +1,5 @@
 # Site settings
-title: SharedInsight
+title: SharededInsights
 email: praveen7484@gmail.com
 description: >- 
   ./configure --with-distributed-systems --enable-data-science
@@ -17,22 +17,24 @@ author:
   location: "~/current/location"
   twitter: sigpipe
   github: praveenkannan
-  linkedin: your-linkedin-username
+  linkedin: praveenkannan
 
 # Build settings
 markdown: kramdown
-theme: minimal # Clean, technical theme that works well for developer portfolios
+theme: jekyll-theme-hacker # GitHub Pages supported theme with a hacker/terminal aesthetic
+remote_theme: pages-themes/hacker@v0.2.0 # Ensures the theme works with GitHub Pages
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-remote-theme # Added to support remote themes
 
 # Theme-specific settings
-minimal_theme:
-  dark_mode: true  # Enable dark mode by default
+theme_settings:
+  show_downloads: false # Hide download buttons in header
+  google_analytics: # Add your GA ID if needed
+  header_text: "~/distributed-systems $ ./share-insights"
   syntax_highlighting: true
-  monospace_font: true  # Use monospace fonts for better code readability
-  accent_color: "#00ADD8"  # Go-lang blue as accent color, good for distributed systems
 
 # Navigation - Unix-style naming
 header_pages:
