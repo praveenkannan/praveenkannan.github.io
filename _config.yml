@@ -1,0 +1,74 @@
+# Site settings
+title: SharedInsight
+email: praveen7484@gmail.com
+description: >- 
+  ./configure --with-distributed-systems --enable-data-science
+  Signals, patterns, and scalable solutions from the command line to the cloud.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://sigsage.io" # the base hostname & protocol for your site
+
+# Author information
+author:
+  name: Praveen Kannan
+  bio: >-
+    #!/usr/bin/env human
+    Distributed systems architect debugging complexity at scale.
+    Signal processor, pattern matcher, failure investigator.
+  location: "~/current/location"
+  twitter: sigpipe
+  github: praveenkannan
+  linkedin: your-linkedin-username
+
+# Build settings
+markdown: kramdown
+theme: minimal # Clean, technical theme that works well for developer portfolios
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Theme-specific settings
+minimal_theme:
+  dark_mode: true  # Enable dark mode by default
+  syntax_highlighting: true
+  monospace_font: true  # Use monospace fonts for better code readability
+  accent_color: "#00ADD8"  # Go-lang blue as accent color, good for distributed systems
+
+# Navigation - Unix-style naming
+header_pages:
+  - usr/bin/about.md
+  - var/projects.md
+  - var/log/blog.md
+  - etc/contact.md
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Pagination settings
+paginate: 6
+paginate_path: "/blog/page:num/"
+
+# Disqus comments (optional)
+# disqus:
+#   shortname: your-disqus-shortname
+
+# Google Analytics (optional)
+# google_analytics: UA-XXXXXXXX-X
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+  - .github
+  - README.md
+  - LICENSE
+  - CNAME
