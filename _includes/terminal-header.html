@@ -1,0 +1,86 @@
+<!-- Terminal-style header for pages -->
+<div class="terminal-header">
+  <div class="terminal-title-bar">
+    <span class="terminal-button terminal-close"></span>
+    <span class="terminal-button terminal-minimize"></span>
+    <span class="terminal-button terminal-maximize"></span>
+    <span class="terminal-title">{{ include.title | default: page.title }}</span>
+  </div>
+  <div class="terminal-content">
+    <span class="terminal-prompt">user@shardedinsights</span>:<span class="terminal-path">~/{{ include.path | default: page.path | split: '/' | last | split: '.' | first }}</span>$ <span class="terminal-text">{{ include.command | default: page.terminal_command | default: "cat README.md" }}</span>
+  </div>
+</div>
+
+<style>
+  .terminal-header {
+    background-color: #1e1e1e;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    font-family: "JetBrains Mono", monospace;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .terminal-title-bar {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+  }
+
+  .terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+  }
+
+  .terminal-close {
+    background-color: #ff5f56;
+  }
+
+  .terminal-minimize {
+    background-color: #ffbd2e;
+  }
+
+  .terminal-maximize {
+    background-color: #27c93f;
+  }
+
+  .terminal-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #ddd;
+  }
+
+  .terminal-content {
+    padding: 15px;
+    color: #f8f8f2;
+    line-height: 1.5;
+    white-space: normal;
+    word-break: break-all;
+  }
+
+  .terminal-prompt {
+    color: #33dd33;
+  }
+
+  .terminal-path {
+    color: #4d97ff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terminal-title-bar {
+      background-color: #1a1a1a;
+    }
+  }
+  
+  /* Make the terminal header look slightly different in light mode */
+  body:not(.dark-mode) .terminal-header {
+    border: 1px solid #e0e0e0;
+  }
+</style>
