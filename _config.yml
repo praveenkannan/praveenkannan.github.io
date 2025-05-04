@@ -22,14 +22,16 @@ author:
 markdown: kramdown
 remote_theme: hydecorp/hydejack@v9.1.6 # Modern theme with excellent typography
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-remote-theme
   - jekyll-paginate
-  - jekyll-include-cache # Required by Hydejack
+  - jekyll-include-cache
 
 # Theme-specific settings
+hydejack:
+  theme: hydecorp/hydejack@v9.1.6
 logo: /assets/img/logo.png
 favicon: /assets/img/favicon.png
 accent_image: /assets/img/sidebar-bg.jpg
@@ -75,8 +77,9 @@ collections:
     permalink: /blog/:year/:month/:day/:title/
 
 # Pagination settings
-paginate: 6
-paginate_path: "/blog/page:num/"
+paginate: 5
+paginate_path: "/page:num/"
+paginate_with: jekyll-paginate
 
 # Footer settings
 footer_links:

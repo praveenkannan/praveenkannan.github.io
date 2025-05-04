@@ -1,13 +1,9 @@
----
-# Only the main Sass file needs front matter (the dashes are enough)
----
-
 // Import fonts
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 
 // Import Hydejack theme styles
-@import "hydejack";
+@import "hydecorp/hydejack@v9.1.6";
 
 // Import custom styles
 @import "custom/style";
