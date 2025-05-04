@@ -20,25 +20,50 @@ author:
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-minimal # Clean, professional theme better for leadership presence
-remote_theme: pages-themes/minimal@v0.2.0 # Ensures the theme works with GitHub Pages
+remote_theme: hydecorp/hydejack@v9.1.6 # Modern theme with excellent typography
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-remote-theme # Added to support remote themes
+  - jekyll-remote-theme
+  - jekyll-paginate
+  - jekyll-include-cache # Required by Hydejack
 
 # Theme-specific settings
-logo: /assets/img/logo.png # Add a professional logo/headshot
-show_downloads: false
-google_analytics: G-XPTTFW2DDH # Replace with your actual Measurement ID
+logo: /assets/img/logo.png
+favicon: /assets/img/favicon.png
+accent_image: /assets/img/sidebar-bg.jpg
+accent_color: '#202020'
+
+# Customization
+theme_color: '#202020'
+hydejack:
+  dark_mode:
+    dynamic: true
+    sunrise: 6
+    sunset: 18
+    icon: true
+  no_drawer: false
+  no_navbar: false
+  no_search: false
+  no_inline_css: false
+  no_push_state: false
+  no_toc: false
+  no_third_party: false
+  offline:
+    enabled: true
+    cache_version: 1
 
 # Navigation - Unix-style naming
-header_pages:
-  - usr/bin/about.md
-  - var/projects.md
-  - var/log/blog.md
-  - etc/contact.md
+menu:
+  - title: ~/about
+    url: /usr/bin/about/
+  - title: ~/projects
+    url: /var/projects/
+  - title: ~/blog
+    url: /var/log/blog/
+  - title: ~/contact
+    url: /etc/contact/
 
 # Collections
 collections:
@@ -53,12 +78,31 @@ collections:
 paginate: 6
 paginate_path: "/blog/page:num/"
 
-# Disqus comments (optional)
-# disqus:
-#   shortname: your-disqus-shortname
+# Footer settings
+footer_links:
+  - title: GitHub
+    url: https://github.com/praveenkannan
+    icon: fab fa-github
+  - title: LinkedIn
+    url: https://www.linkedin.com/in/praveenkannan
+    icon: fab fa-linkedin
+  - title: Twitter
+    url: https://twitter.com/sigpipe
+    icon: fab fa-twitter
 
-# Google Analytics (optional)
-# google_analytics: UA-XXXXXXXX-X
+# SEO settings
+twitter:
+  username: sigpipe
+  card: summary
+social:
+  name: Praveen Kannan
+  links:
+    - https://twitter.com/sigpipe
+    - https://www.linkedin.com/in/praveenkannan
+    - https://github.com/praveenkannan
+
+# Google Analytics
+google_analytics: G-XPTTFW2DDH
 
 # Exclude from processing
 exclude:
