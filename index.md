@@ -7,7 +7,7 @@ terminal_command: "cat your-page-name.md"
 
 # Latest Insights
 
-{% include paginator.html %}
+{% include_cached paginator.html %}
 
 ## Explore More
 

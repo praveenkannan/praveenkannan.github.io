@@ -59,27 +59,23 @@ hydejack:
 # Navigation - Unix-style naming
 menu:
   - title: ~/about
-    url: /usr/bin/about/
+    url: /about/
   - title: ~/projects
-    url: /var/projects/
+    url: /projects/
   - title: ~/blog
-    url: /var/log/blog/
+    url: /blog/
   - title: ~/contact
-    url: /etc/contact/
+    url: /contact/
 
 # Collections
 collections:
   projects:
     output: true
     permalink: /:collection/:name
-  posts:
-    output: true
-    permalink: /blog/:year/:month/:day/:title/
 
 # Pagination settings
 paginate: 5
 paginate_path: "/page:num/"
-paginate_with: jekyll-paginate
 
 # Footer settings
 footer_links:
