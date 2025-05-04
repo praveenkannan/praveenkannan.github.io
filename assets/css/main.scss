@@ -1,0 +1,123 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+// Import Hydejack theme styles
+@import "hydejack";
+
+// Import custom styles
+@import "custom/style";
+@import "custom/syntax-highlighting";
+
+// Dark mode theme toggle styles
+body {
+  --body-bg: #fff;
+  --body-color: #333;
+  --heading-color: #222;
+  --border-color: #ddd;
+  --gray-bg: #f5f5f5;
+  --gray-text: #777;
+  --menu-text: #222;
+  --code-text: #24292e;
+  --code-bg: #f6f8fa;
+}
+
+body.dark-mode {
+  --body-bg: #121212;
+  --body-color: #e0e0e0;
+  --heading-color: #fff;
+  --border-color: #333;
+  --gray-bg: #1e1e1e;
+  --gray-text: #aaa;
+  --menu-text: #ddd;
+  --code-text: #f8f8f2;
+  --code-bg: #272822;
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.light-mode) {
+    --body-bg: #121212;
+    --body-color: #e0e0e0;
+    --heading-color: #fff;
+    --border-color: #333;
+    --gray-bg: #1e1e1e;
+    --gray-text: #aaa;
+    --menu-text: #ddd;
+    --code-text: #f8f8f2;
+    --code-bg: #272822;
+  }
+}
+
+// Apply variables
+body {
+  background-color: var(--body-bg);
+  color: var(--body-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+}
+
+code {
+  color: var(--code-text);
+  background-color: var(--code-bg);
+}
+
+// Smooth transitions
+.page-transition {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-out;
+}
+
+.page-fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+// Terminal prompt styling for headers
+.terminal-prompt::before {
+  content: "$ ";
+  color: #33ff33;
+  font-family: var(--font-family-mono);
+}
+
+// Command-line style section titles
+.command-title {
+  font-family: var(--font-family-mono);
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  
+  &::before {
+    content: ">";
+    margin-right: 0.5rem;
+    color: var(--link-color);
+  }
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-text);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--link-color);
+}
