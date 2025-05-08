@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   links.forEach(link => {
     if (link.hostname !== window.location.hostname) {
       link.setAttribute('rel', 'noopener noreferrer');
+      link.setAttribute('target', '_blank');
     }
   });
 });
