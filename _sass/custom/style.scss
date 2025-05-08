@@ -119,3 +119,91 @@ a {
   margin-bottom: 2rem;
   border-left: 4px solid #33ff33;
 }
+
+// Responsive Design Improvements
+@media screen and (max-width: 768px) {
+  :root {
+    --font-size-base: 16px;
+    --font-size-h1: 1.8rem;
+    --font-size-h2: 1.5rem;
+    --font-size-h3: 1.2rem;
+  }
+
+  body {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+
+  .terminal-hero {
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .terminal-window {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .posts-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .theme-toggle-container {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+// Accessibility Improvements
+[data-theme="dark"] {
+  color-scheme: dark;
+  background-color: #121212;
+  color: #e0e0e0;
+
+  a {
+    color: #4da6ff;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #80c1ff;
+    }
+  }
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  background-color: #ffffff;
+  color: #333;
+}
+
+// Enhanced Typography
+html {
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+// Performance Optimization
+.lazy-load {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+// Print Styles
+@media print {
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+  }
+
+  .terminal-hero, .theme-toggle-container {
+    display: none;
+  }
+}

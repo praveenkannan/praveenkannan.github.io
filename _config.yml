@@ -1,22 +1,20 @@
 # Site settings
-title: ShardedInsights
+title: "Sharded Insights | Tech Blog by Praveen Kannan"
 email: praveen7484@gmail.com
-description: >- 
-  ./configure --with-distributed-systems --enable-data-science
-  Signals, patterns, and scalable solutions from the command line to the cloud.
+description: "Exploring software engineering, AI, cloud technologies, and innovative tech solutions. Join me in unraveling complex tech concepts."
 baseurl: "" # empty for user/organization site
 url: "https://shardedinsights.github.io" # the base hostname & protocol for your site
 
 # Author information
 author:
-  name: Praveen Kannan
+  name: "Praveen Kannan"
   bio: >-
     Technology leader specializing in distributed systems architecture and scalable data solutions.
     Solving enterprise-scale challenges with elegant technical design and strategic thinking.
   location: "Global"
-  twitter: sigpipe
+  twitter: "@praveenkannan"
   github: praveenkannan
-  linkedin: praveenkannan
+  linkedin: "praveenkannan"
 
 # Build settings
 markdown: kramdown
@@ -28,6 +26,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-include-cache
+  - jekyll-compress-images
 
 # Theme-specific settings
 hydejack:
@@ -94,11 +93,30 @@ twitter:
   username: sigpipe
   card: summary
 social:
-  name: Praveen Kannan
+  name: Sharded Insights
   links:
-    - https://twitter.com/sigpipe
-    - https://www.linkedin.com/in/praveenkannan
+    - https://twitter.com/praveenkannan
+    - https://linkedin.com/in/praveenkannan
     - https://github.com/praveenkannan
+
+# Open Graph and Twitter Card Metadata
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/site-preview.png
+      og:
+        type: article
+      twitter:
+        card: summary_large_image
+
+# Performance and Security Headers
+webrick:
+  headers:
+    Strict-Transport-Security: max-age=31536000; includeSubDomains
+    X-Frame-Options: DENY
+    X-XSS-Protection: 1; mode=block
+    Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'
 
 # Google Analytics
 google_analytics: G-XPTTFW2DDH
