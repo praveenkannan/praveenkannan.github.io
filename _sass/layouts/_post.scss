@@ -1,0 +1,103 @@
+// Post page styles
+
+// Post Container
+.post-container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-unit;
+}
+
+// Post Header
+.post-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.post-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.post-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+// Post Content
+.post-content {
+  margin-bottom: 60px;
+  line-height: 1.8;
+  
+  h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+  }
+  
+  h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: $border-radius;
+    margin: 30px 0;
+  }
+  
+  pre {
+    background-color: var(--card-bg);
+    border-radius: $border-radius;
+    padding: 20px;
+    margin: 20px 0;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+  }
+  
+  code {
+    font-family: $font-family-mono;
+    font-size: 0.9rem;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 20px;
+    margin: 20px 0;
+    font-style: italic;
+    color: var(--text-light);
+  }
+  
+  ul, ol {
+    margin-bottom: 20px;
+    padding-left: 30px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+// Back to blog
+.back-to-blog {
+  text-align: center;
+  margin-top: 40px;
+}
+
+// Responsive Adjustments
+@media (max-width: $breakpoint-medium) {
+  .post-title {
+    font-size: 2rem;
+  }
+}

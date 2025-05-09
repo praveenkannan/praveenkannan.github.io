@@ -1,0 +1,88 @@
+// Reset and normalize styles
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  font-family: $font-family-sans;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $background-color;
+  transition: background-color $transition-speed $transition-ease, color $transition-speed $transition-ease;
+  font-size: $font-size-base;
+  font-weight: $font-weight-light;
+}
+
+// Remove default margin
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure {
+  margin: 0;
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
+}
+
+// Links
+a {
+  color: $text-color;
+  text-decoration: underline;
+  text-decoration-color: rgba(0,0,0,0.3);
+  text-underline-offset: 2px;
+  transition: text-decoration-color $transition-speed $transition-ease;
+  
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+// Lists
+ul, ol {
+  list-style-position: inside;
+}
+
+// Tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// Forms
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
+}
+
+// Remove button styling
+button {
+  overflow: visible;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+// Container
+.container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-unit;
+}

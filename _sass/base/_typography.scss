@@ -1,0 +1,104 @@
+// Typography styles
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  font-weight: $font-weight-normal;
+  color: $text-color;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+h5, h6 {
+  font-size: 1rem;
+}
+
+// Paragraphs
+p {
+  margin-bottom: 1.5rem;
+}
+
+// Lists
+ul, ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+// Blockquotes
+blockquote {
+  border-left: 4px solid $primary-color;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: $text-light;
+}
+
+// Code
+code {
+  font-family: $font-family-mono;
+  font-size: 0.9rem;
+  padding: 0.2em 0.4em;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+pre {
+  background-color: $card-bg;
+  border-radius: $border-radius;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  border: 1px solid $border-color;
+  
+  code {
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+// Small text
+small {
+  font-size: 0.85rem;
+}
+
+// Strong
+strong {
+  font-weight: $font-weight-bold;
+}
+
+// Emphasis
+em {
+  font-style: italic;
+}
+
+// Links
+a {
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+// Selection
+::selection {
+  background-color: rgba($primary-color, 0.2);
+  color: $text-color;
+}

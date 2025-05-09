@@ -1,4 +1,25 @@
-// Import fonts
+// Base imports
+@import "base/variables";
+@import "base/reset";
+@import "base/typography";
+@import "base/dark-mode";
+
+// Components
+@import "components/buttons";
+@import "components/cards";
+@import "components/navigation";
+@import "components/tags";
+
+// Layouts
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/grid";
+@import "layouts/home";
+@import "layouts/post";
+
+// Utilities
+@import "utilities/mixins";
+@import "utilities/syntax-highlighting";// Import fonts
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -8,6 +29,9 @@
 // Import custom styles
 @import "custom/style";
 @import "custom/syntax-highlighting";
+@import "custom/minimalist";
+@import "custom/home";
+@import "custom/post";
 
 // Dark mode theme toggle styles
 body {

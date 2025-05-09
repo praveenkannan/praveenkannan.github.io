@@ -1,0 +1,77 @@
+// Tag styles
+
+// Post categories
+.post-categories {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.post-category {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: $font-weight-medium;
+  display: inline-block;
+}
+
+// Post tags
+.post-tags {
+  margin-bottom: 40px;
+  
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.post-tag {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  transition: background-color $transition-speed $transition-ease, color $transition-speed $transition-ease;
+  
+  &:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+}
+
+// Tag cloud
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  
+  .tag {
+    @extend .post-tag;
+    
+    &.tag-sm {
+      font-size: 0.7rem;
+      padding: 3px 8px;
+    }
+    
+    &.tag-md {
+      font-size: 0.8rem;
+      padding: 5px 12px;
+    }
+    
+    &.tag-lg {
+      font-size: 0.9rem;
+      padding: 6px 14px;
+    }
+  }
+}

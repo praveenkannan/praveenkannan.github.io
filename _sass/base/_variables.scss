@@ -1,0 +1,44 @@
+// Variables for the minimalist theme
+
+// Colors
+$primary-color: #333;
+$primary-dark: #222;
+$secondary-color: #666;
+$text-color: #333;
+$text-light: #666;
+$background-color: #fff;
+$card-bg: #fff;
+$border-color: #eee;
+$shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+$footer-bg: #f9f9f9;
+
+// Typography
+$font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-family-mono: 'JetBrains Mono', monospace;
+$font-size-base: 16px;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$line-height-base: 1.6;
+
+// Layout
+$border-radius: 8px;
+$header-height: 60px;
+$max-width: 800px;
+$content-width: 1200px;
+$spacing-unit: 20px;
+
+// Breakpoints
+$breakpoint-small: 600px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
+
+// Z-index
+$z-index-header: 1000;
+$z-index-dropdown: 900;
+$z-index-modal: 1100;
+
+// Transitions
+$transition-speed: 0.3s;
+$transition-ease: ease;

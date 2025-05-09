@@ -1,0 +1,67 @@
+// Dark mode variables and styles
+
+:root {
+  // Light mode variables (default)
+  --primary-color: #{$primary-color};
+  --primary-dark: #{$primary-dark};
+  --secondary-color: #{$secondary-color};
+  --text-color: #{$text-color};
+  --text-light: #{$text-light};
+  --background-color: #{$background-color};
+  --card-bg: #{$card-bg};
+  --border-color: #{$border-color};
+  --shadow: #{$shadow};
+  --footer-bg: #{$footer-bg};
+}
+
+.dark-mode {
+  // Dark mode variables
+  --primary-color: #4dabf7;
+  --primary-dark: #339af0;
+  --secondary-color: #ced4da;
+  --text-color: #ddd;
+  --text-light: #aaa;
+  --background-color: #222;
+  --card-bg: #343a40;
+  --border-color: #333;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --footer-bg: #1a1a1a;
+  
+  // Dark mode specific styles
+  a {
+    text-decoration-color: rgba(255, 255, 255, 0.3);
+    
+    &:hover {
+      text-decoration-color: currentColor;
+    }
+  }
+  
+  code {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  ::selection {
+    background-color: rgba(77, 171, 247, 0.3);
+  }
+}
+
+// Dark mode toggle
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  transition: opacity $transition-speed $transition-ease;
+  
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+// Transition for smooth theme switching
+body {
+  transition: background-color $transition-speed $transition-ease,
+              color $transition-speed $transition-ease;
+}
