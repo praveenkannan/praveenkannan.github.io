@@ -21,31 +21,14 @@
   
   <!-- SEO and Metadata -->
   {% seo %}
-  
-  <!-- Dark Mode Toggle Script -->
-  <script>
-    // Dark Mode Toggle
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-      localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
-    }
-
-    // Check User's Preference
-    document.addEventListener('DOMContentLoaded', () => {
-      const isDarkMode = localStorage.getItem('dark-mode') === 'true';
-      if (isDarkMode) {
-        document.body.classList.add('dark-mode');
-      }
-    });
-  </script>
 </head>
 <body>
-  <div class="container">
-    <!-- Dark Mode Toggle Button -->
-    <button onclick="toggleDarkMode()" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
-      Toggle Dark Mode
-    </button>
+  <!-- Dark Mode Toggle -->
+  <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle Dark Mode">
+    🌓
+  </button>
 
+  <div class="container">
     <!-- Main Content -->
     <main>
       {{ content }}
@@ -54,7 +37,7 @@
     <!-- Footer -->
     <footer>
       <div class="footer-content">
-        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}. All rights reserved.</p>
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
         <nav class="footer-nav">
           <a href="/about">About</a>
           <a href="/blog">Blog</a>
@@ -63,6 +46,28 @@
       </div>
     </footer>
   </div>
+
+  <!-- Dark Mode Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const darkModeToggle = document.getElementById('dark-mode-toggle');
+      const savedTheme = localStorage.getItem('site-theme');
+
+      // Set initial theme
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+      }
+
+      // Toggle Dark Mode
+      darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        // Save preference
+        const isDarkMode = document.body.classList.contains('dark-mode');
+        localStorage.setItem('site-theme', isDarkMode ? 'dark' : 'light');
+      });
+    });
+  </script>
 
   <!-- Optional JavaScript -->
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
