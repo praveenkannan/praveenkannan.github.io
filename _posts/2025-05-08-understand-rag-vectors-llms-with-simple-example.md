@@ -8,8 +8,6 @@ description: "A comprehensive guide to understanding Retrieval-Augmented Generat
 robots: noindex, nofollow
 ---
 
-# From Search to Smart Answers: Understanding RAG, Vectors, and LLMs
-
 ## Introduction
 
 As I've been learning about AI systems, I discovered that traditional search capabilities often fall short when users need contextual understanding rather than keyword matching. Through my studies and experiments, I found that combining **Retrieval-Augmented Generation (RAG)**, **vector embeddings**, and **Large Language Models (LLMs)** creates something truly powerful that transforms how search works.

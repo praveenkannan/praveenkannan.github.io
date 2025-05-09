@@ -1,58 +1,60 @@
-/* Developer-Friendly Color Scheme */
+/* Medium-inspired Design System */
 :root {
   /* Light Mode Colors */
-  --bg-light: #f4f4f4;
-  --text-light: #333;
-  --code-bg-light: #f0f0f0;
+  --bg-light: #ffffff;
+  --text-primary-light: #292929;
+  --text-secondary-light: #6b6b6b;
+  --border-light: #e5e5e5;
+  --code-bg-light: #f4f4f4;
   --code-text-light: #d14;
-  --border-light: #e0e0e0;
 
   /* Dark Mode Colors */
   --bg-dark: #121212;
-  --text-dark: #e0e0e0;
+  --text-primary-dark: #e0e0e0;
+  --text-secondary-dark: #a0a0a0;
+  --border-dark: #333;
   --code-bg-dark: #1e1e1e;
   --code-text-dark: #9cdcfe;
-  --border-dark: #333;
 
-  /* Neutral Grays */
-  --gray-50: #fafafa;
-  --gray-100: #f5f5f5;
-  --gray-200: #eeeeee;
-  --gray-300: #e0e0e0;
-  --gray-400: #bdbdbd;
-  --gray-500: #9e9e9e;
-  --gray-600: #757575;
-  --gray-700: #616161;
-  --gray-800: #424242;
-  --gray-900: #212121;
+  /* Typography */
+  --font-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Merriweather", Georgia, serif;
+  --font-mono: "Cascadia Code", "Fira Code", Consolas, Monaco, monospace;
 }
 
-/* Base Styles */
+/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--font-base);
   line-height: 1.6;
-  color: var(--text-light);
+  color: var(--text-primary-light);
   background-color: var(--bg-light);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark Mode */
 body.dark-mode {
-  color: var(--text-dark);
+  color: var(--text-primary-dark);
   background-color: var(--bg-dark);
+}
+
+/* Container and Layout */
+.container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--gray-800);
+  font-family: var(--font-serif);
   margin-bottom: 1rem;
-  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-primary-light);
 }
 
 body.dark-mode h1, 
@@ -61,31 +63,61 @@ body.dark-mode h3,
 body.dark-mode h4, 
 body.dark-mode h5, 
 body.dark-mode h6 {
-  color: var(--gray-200);
+  color: var(--text-primary-dark);
+}
+
+/* Article Styling */
+article {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: var(--font-serif);
+  font-size: 21px;
+  line-height: 1.6;
+  color: var(--text-primary-light);
+}
+
+body.dark-mode article {
+  color: var(--text-primary-dark);
+}
+
+article p {
+  margin-bottom: 1.5rem;
+}
+
+article h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+article h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* Links */
 a {
-  color: var(--gray-800);
+  color: var(--text-primary-light);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 a:hover {
-  color: var(--gray-600);
+  color: #1a73e8;
 }
 
 body.dark-mode a {
-  color: var(--gray-200);
+  color: var(--text-primary-dark);
 }
 
 body.dark-mode a:hover {
-  color: var(--gray-400);
+  color: #4285f4;
 }
 
 /* Code Styling */
 code, pre {
-  font-family: 'Cascadia Code', 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.9em;
 }
 
@@ -111,6 +143,7 @@ pre {
   padding: 1em;
   overflow-x: auto;
   line-height: 1.4;
+  margin: 1.5rem 0;
 }
 
 body.dark-mode pre {
@@ -118,34 +151,55 @@ body.dark-mode pre {
   border-color: var(--border-dark);
 }
 
-/* Container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
 /* Buttons */
 .btn {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: var(--gray-800);
+  padding: 0.75rem 1.25rem;
+  background-color: #1a73e8;
   color: white;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
 }
 
 .btn:hover {
-  background-color: var(--gray-700);
+  background-color: #1557b0;
+  transform: translateY(-2px);
 }
 
 body.dark-mode .btn {
-  background-color: var(--gray-200);
-  color: var(--bg-dark);
+  background-color: #4285f4;
+  color: white;
 }
 
 body.dark-mode .btn:hover {
-  background-color: var(--gray-300);
+  background-color: #5a9eff;
+}
+
+/* Read More Link Styling */
+.read-more-link {
+  color: #1a73e8;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.read-more-link:hover {
+  color: #1557b0;
+  text-decoration: underline;
+}
+
+body.dark-mode .read-more-link {
+  color: #4285f4;
+}
+
+body.dark-mode .read-more-link:hover {
+  color: #5a9eff;
 }
 
 /* Dark Mode Toggle */
@@ -158,49 +212,99 @@ body.dark-mode .btn:hover {
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 1000;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.dark-mode-toggle:hover {
+  opacity: 1;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .container {
+  .container, article {
+    max-width: 100%;
     padding: 0.5rem;
+    font-size: 18px;
+  }
+
+  article h1 {
+    font-size: 2rem;
+  }
+
+  article h2 {
+    font-size: 1.5rem;
   }
 }
 
-/* Syntax Highlighting for Code Blocks */
+/* Syntax Highlighting */
 pre code {
   display: block;
-  color: var(--text-light);
+  color: var(--text-primary-light);
   background: none;
   white-space: pre;
   -webkit-overflow-scrolling: touch;
 }
 
 body.dark-mode pre code {
-  color: var(--text-dark);
+  color: var(--text-primary-dark);
 }
 
-/* Language-specific Code Highlighting */
-pre code.language-javascript {
-  color: var(--code-text-light);
+/* Language-specific Highlighting */
+pre code.language-javascript { color: var(--code-text-light); }
+pre code.language-python { color: var(--code-text-light); }
+pre code.language-css { color: var(--code-text-light); }
+
+body.dark-mode pre code.language-javascript { color: var(--code-text-dark); }
+body.dark-mode pre code.language-python { color: var(--code-text-dark); }
+body.dark-mode pre code.language-css { color: var(--code-text-dark); }
+
+/* Social Icons Styling */
+footer {
+  position: relative;
 }
 
-pre code.language-python {
-  color: var(--code-text-light);
+.social-icons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 15px;
+  z-index: 1000;
 }
 
-pre code.language-css {
-  color: var(--code-text-light);
+.social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-body.dark-mode pre code.language-javascript {
-  color: var(--code-text-dark);
+.social-icons a svg {
+  width: 24px;
+  height: 24px;
+  color: var(--text-primary-light);
+  transition: color 0.3s ease;
 }
 
-body.dark-mode pre code.language-python {
-  color: var(--code-text-dark);
+.social-icons a:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
 }
 
-body.dark-mode pre code.language-css {
-  color: var(--code-text-dark);
+body.dark-mode .social-icons a svg {
+  color: var(--text-primary-dark);
+}
+
+body.dark-mode .social-icons a {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .social-icons a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
