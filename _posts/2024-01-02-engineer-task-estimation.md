@@ -2,8 +2,10 @@
 layout: posts
 title: "The Art of Engineering Task Estimation"
 date: 2024-01-02
-categories: [engineering, project-management, software-development]
-tags: [task-estimation, software-engineering, project-planning]
+categories: [Software Engineering, Project Management]
+tags: [Estimation, Agile, Planning]
+description: "Insights into effective task estimation techniques for software engineering projects"
+robots: noindex, nofollow
 ---
 
 # The Art of Engineering Task Estimation

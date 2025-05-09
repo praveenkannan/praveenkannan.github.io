@@ -5,6 +5,24 @@ description: "Exploring software engineering, AI, cloud technologies, and innova
 baseurl: "" # empty for user/organization site
 url: "https://shardedinsights.github.io" # the base hostname & protocol for your site
 
+# SEO and Privacy Settings
+webmaster_verifications:
+  google: ""  # Optional: Add Google Search Console verification
+  bing: ""    # Optional: Add Bing Webmaster Tools verification
+
+# Robots and Crawling
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      robots: "index, follow"
+      image: /assets/img/site-preview.png
+      og:
+        type: article
+      twitter:
+        card: summary_large_image
+
 # Author information
 author:
   name: "Praveen Kannan"
@@ -98,17 +116,6 @@ social:
     - https://twitter.com/praveenkannan
     - https://linkedin.com/in/praveenkannan
     - https://github.com/praveenkannan
-
-# Open Graph and Twitter Card Metadata
-defaults:
-  - scope:
-      path: ""
-    values:
-      image: /assets/img/site-preview.png
-      og:
-        type: article
-      twitter:
-        card: summary_large_image
 
 # Performance and Security Headers
 webrick:

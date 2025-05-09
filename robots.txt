@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Prevent tracking of specific directories
+Disallow: /assets/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://shardedinsights.github.io/sitemap.xml
