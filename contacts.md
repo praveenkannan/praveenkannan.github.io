@@ -1,0 +1,102 @@
+---
+layout: default
+title: Contact
+terminal_style: true
+terminal_command: "cat ~/contact_info"
+permalink: /contacts/
+---
+
+<div class="contact-container">
+  <h1>{{ page.title }}</h1>
+  
+  <div class="contact-section">
+    <h2>Get in Touch</h2>
+    <p>Feel free to reach out for professional inquiries, collaboration opportunities, or just to say hello.</p>
+  </div>
+
+  <div class="contact-methods">
+    <div class="contact-method">
+      <h3>Email</h3>
+      <p>
+        <a href="mailto:praveen7484@gmail.com" class="contact-link">
+          <i class="fas fa-envelope"></i> praveen7484@gmail.com
+        </a>
+      </p>
+    </div>
+
+    <div class="contact-method">
+      <h3>Social Networks</h3>
+      <div class="social-links">
+        <a href="https://github.com/praveenkannan" target="_blank" class="contact-link">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://linkedin.com/in/praveenkannan" target="_blank" class="contact-link">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://twitter.com/praveenkannan" target="_blank" class="contact-link">
+          <i class="fab fa-twitter"></i> Twitter
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-disclaimer">
+    <p>
+      <strong>Note:</strong> I'm always open to interesting conversations about technology, 
+      software engineering, and innovative solutions. However, please note that I may not 
+      be able to respond to every message immediately.
+    </p>
+  </div>
+</div>
+
+<style>
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--body-bg);
+  color: var(--body-color);
+}
+
+.contact-section, .contact-methods, .contact-disclaimer {
+  margin-bottom: 30px;
+}
+
+.contact-method {
+  margin-bottom: 20px;
+}
+
+.contact-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--accent-color-hover);
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-link i {
+  margin-right: 10px;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const contactLinks = document.querySelectorAll('.contact-link');
+  contactLinks.forEach(link => {
+    if (link.getAttribute('href').startsWith('http')) {
+      link.setAttribute('rel', 'noopener noreferrer');
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open(link.href, '_blank', 'noopener,noreferrer');
+      });
+    }
+  });
+});
+</script>

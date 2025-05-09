@@ -1,0 +1,178 @@
+---
+layout: default
+---
+
+<div class="post-container">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%B %d, %Y" }}
+        </time>
+        {% if page.categories.size > 0 %}
+        <span class="post-categories">
+          in 
+          {% for category in page.categories %}
+          <span class="post-category">{{ category }}</span>
+          {% endfor %}
+        </span>
+        {% endif %}
+      </p>
+    </header>
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    {% if page.tags.size > 0 %}
+    <div class="post-tags">
+      <h3>Tags:</h3>
+      <div class="tags-list">
+        {% for tag in page.tags %}
+        <span class="post-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </article>
+
+  <div class="post-navigation">
+    {% if page.previous.url %}
+    <a class="prev-post" href="{{ page.previous.url | relative_url }}">&laquo; {{ page.previous.title }}</a>
+    {% endif %}
+    
+    {% if page.next.url %}
+    <a class="next-post" href="{{ page.next.url | relative_url }}">{{ page.next.title }} &raquo;</a>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+.post-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--body-bg, #ffffff);
+  color: var(--body-color, #24292e);
+}
+
+.post-header {
+  margin-bottom: 30px;
+}
+
+.post-title {
+  margin-bottom: 10px;
+  font-size: 2.2em;
+  line-height: 1.2;
+}
+
+.post-meta {
+  color: var(--text-muted, #6a737d);
+  font-size: 0.9em;
+  margin-bottom: 20px;
+}
+
+.post-category {
+  background-color: var(--category-bg, #0366d6);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  margin-right: 5px;
+}
+
+.post-content {
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.post-content h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--border-color, #e1e4e8);
+}
+
+.post-content h3 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.post-content p {
+  margin-bottom: 15px;
+}
+
+.post-content pre {
+  background-color: var(--code-bg, #f6f8fa);
+  border-radius: 6px;
+  padding: 16px;
+  overflow: auto;
+  margin-bottom: 16px;
+}
+
+.post-content code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  background-color: var(--inline-code-bg, rgba(27, 31, 35, 0.05));
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.post-content pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.post-tags {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.post-tag {
+  background-color: var(--tag-bg, #e1e4e8);
+  color: var(--tag-color, #24292e);
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+}
+
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color, #e1e4e8);
+}
+
+.prev-post, .next-post {
+  color: var(--link-color, #0366d6);
+  text-decoration: none;
+  max-width: 45%;
+}
+
+.prev-post:hover, .next-post:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .post-title {
+    font-size: 1.8em;
+  }
+  
+  .post-navigation {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .prev-post, .next-post {
+    max-width: 100%;
+  }
+}
+</style>

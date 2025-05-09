@@ -63,13 +63,13 @@ hydejack:
 # Navigation - Unix-style naming
 menu:
   - title: ~/about
-    url: /_layouts/about.html
+    url: /about
   - title: ~/projects
-    url: /_layouts/projects.html
+    url: /projects
   - title: ~/blog
-    url: /_layouts/blog.html
+    url: /blog
   - title: ~/contact
-    url: /_layouts/contact.html
+    url: /contacts
 
 # Collections
 collections:

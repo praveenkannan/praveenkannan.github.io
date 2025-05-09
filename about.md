@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Home
+title: About
 terminal_style: true
-terminal_command: "cat your-page-name.md"
+terminal_command: "cat about.md"
+permalink: /about/
 ---
 
 # Praveen Kannan

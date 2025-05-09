@@ -14,4 +14,4 @@ terminal_command: "cat your-page-name.md"
 - [View All Posts](/blog)
 - [View My Projects](/projects)
 - [Learn More About Me](/about)
-- [Get in Touch](/contact)
+- [Get in Touch](/contacts)
