@@ -1,6 +1,7 @@
 ---
 layout: home
 title: Home
+permalink: /
 ---
 
 # Welcome to Sharded Insights
@@ -9,7 +10,7 @@ Explore cutting-edge insights in software engineering, AI, and cloud technologie
 
 ## Latest Blog Posts
 
-{% for post in site.posts %}
+{% for post in site.posts limit:3 %}
 ### [{{ post.title }}]({{ site.baseurl }}{{ post.url }})
 
 **{{ post.date | date: "%B %d, %Y" }}**

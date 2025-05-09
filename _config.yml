@@ -25,7 +25,9 @@ defaults:
 
 # Build settings
 markdown: kramdown
-remote_theme: hydecorp/hydejack@v9.1.6 # Modern theme with excellent typography
+remote_theme: hydecorp/hydejack@v9.1.6
+
+# Plugins
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
@@ -37,91 +39,65 @@ plugins:
 
 # Theme Configuration
 hydejack:
-  theme: hydecorp/hydejack@v9.1.6
-  dark_mode:
-    dynamic: true
-    sunrise: 6
-    sunset: 18
-    icon: true
+  # Set to `true` if you want to add a dark mode toggle
+  dark_mode: true
   
-  # Enhanced customization
-  no_drawer: false
-  no_navbar: false
-  no_search: false
-  no_inline_css: false
-  no_push_state: false
-  no_toc: false
-  no_third_party: false
+  # Set to `true` if you want to use the logo as a background for the entire page
+  background_image: false
   
-  # Performance and Offline Support
-  offline:
-    enabled: true
-    cache_version: 2  # Increment to force cache refresh
+  # Set the color accent for the theme
+  accent_color: '#4fb1ba'
+  
+  # Set the theme color
+  theme_color: '#4fb1ba'
+  
+  # Enable or disable features
+  features:
+    - navigation
+    - search
+    - dark_mode
+    - comments
+    - related_posts
+    - project_card
+    - blog_card
+  
+  # Disqus Comments
+  disqus: false
+  
+  # Google Analytics
+  google_analytics: G-XPTTFW2DDH
 
-# Typography and Design
-logo: /assets/img/logo.png
-favicon: /assets/img/favicon.png
-accent_image: /assets/img/sidebar-bg.jpg
-accent_color: '#3498db'
-theme_color: '#3498db'
+# Author Settings
+author:
+  name: "Praveen Kannan"
+  avatar: "/assets/img/avatar.jpg"
+  bio: "Software Engineer | AI Enthusiast | Cloud Technologies"
+  location: "San Francisco, CA"
+  email: "praveen.kannan@example.com"
+  social:
+    linkedin: "praveenkannan"
+    github: "praveenkannan"
+    twitter: "praveenkannan"
 
-# Performance Optimization
-compress_html:
-  clippings: all
-  comments: all
-  endings: all
-  startings: [html, head, body]
-
-# Navigation - Unix-style naming
-menu:
-  - title: ~/about
-    url: /about
-  - title: ~/projects
-    url: /projects
-  - title: ~/blog
-    url: /blog
-  - title: ~/contact
-    url: /contacts
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"
 
 # Collections
 collections:
   projects:
     output: true
-    permalink: /:collection/:name
-
-# Pagination settings
-paginate: 5
-paginate_path: "/page:num/"
-
-# SEO and Social Sharing
-twitter:
-  username: sigpipe
-  card: summary_large_image
-
-social:
-  name: Sharded Insights
-  links:
-    - https://twitter.com/praveenkannan
-    - https://linkedin.com/in/praveenkannan
-    - https://github.com/praveenkannan
-
-# Performance and Security Headers
-webrick:
-  headers:
-    Strict-Transport-Security: max-age=31536000; includeSubDomains
-    X-Frame-Options: DENY
-    X-XSS-Protection: 1; mode=block
-    Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'
-
-# Google Analytics
-google_analytics: G-XPTTFW2DDH
+    permalink: /projects/:path/
 
 # Exclude from processing
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - vendor
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
   - .git
   - .github
   - README.md

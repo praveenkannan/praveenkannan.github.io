@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "From Search to Smart Answers: Understanding RAG, Vectors, and LLMs"
-date: 2025-06-01
+date: 2025-05-08
 categories: [AI, Machine Learning, Natural Language Processing]
 tags: [RAG, Vector Embeddings, Large Language Models]
 description: "A comprehensive guide to understanding Retrieval-Augmented Generation (RAG), vector representations, and how they enhance Large Language Models."

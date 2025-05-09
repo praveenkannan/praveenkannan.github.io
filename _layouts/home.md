@@ -3,61 +3,58 @@ layout: default
 title: Home
 ---
 
-<div class="home-container">
-  <section class="hero">
+<div class="sidebar-sticky">
+  <div class="sidebar-about">
+    <h1>
+      <a href="{{ site.baseurl }}/">
+        {{ site.title }}
+      </a>
+    </h1>
+    <p class="lead">{{ site.description }}</p>
+  </div>
+
+  <div class="hero-section">
     <div class="hero-content">
-      <h1>Sharded Insights</h1>
-      <p class="tagline">Exploring software engineering, AI, and cloud technologies</p>
-      <div class="hero-buttons">
-        <a href="/about" class="btn btn-primary">About Me</a>
-        <a href="/blog" class="btn btn-secondary">Read Blog</a>
-      </div>
+      <h2>Welcome to Sharded Insights</h2>
+      <p>Exploring cutting-edge insights in software engineering, AI, and cloud technologies.</p>
     </div>
-  </section>
+  </div>
 
   <section class="featured-posts">
-    <h2 class="section-title">Latest Insights</h2>
-    <div class="posts-grid">
+    <h3 class="section-title">Latest Blog Posts</h3>
+    <div class="card-grid">
       {% for post in site.posts limit:3 %}
-        <div class="post-card">
-          <div class="post-card-content">
-            <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-            <p class="post-meta">
+        <article class="card post-card">
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h4>
+            <p class="card-text">{{ post.description }}</p>
+            <div class="card-footer">
               <time datetime="{{ post.date | date_to_xmlschema }}">
                 {{ post.date | date: "%B %d, %Y" }}
               </time>
-            </p>
-            {% if post.description %}
-              <p class="post-description">{{ post.description }}</p>
-            {% endif %}
-            <a href="{{ post.url | relative_url }}" class="read-more">Read More →</a>
+              <a href="{{ post.url | relative_url }}" class="btn btn-primary btn-sm">Read More</a>
+            </div>
           </div>
-        </div>
+        </article>
       {% endfor %}
-    </div>
-    <div class="view-all">
-      <a href="/blog" class="btn btn-outline">View All Posts</a>
     </div>
   </section>
 
-  <section class="quick-links">
-    <h2 class="section-title">Explore More</h2>
-    <div class="links-grid">
-      <a href="/projects" class="quick-link-card">
-        <div class="quick-link-icon">📂</div>
-        <h3>Projects</h3>
-        <p>Explore my technical projects and case studies</p>
-      </a>
-      <a href="/about" class="quick-link-card">
-        <div class="quick-link-icon">👨‍💻</div>
-        <h3>About</h3>
-        <p>Learn more about my experience and expertise</p>
-      </a>
-      <a href="/contacts" class="quick-link-card">
-        <div class="quick-link-icon">📬</div>
-        <h3>Contact</h3>
-        <p>Get in touch for collaborations or inquiries</p>
-      </a>
+  <nav class="sidebar-nav">
+    <div class="nav-links">
+      <a href="/blog" class="btn btn-outline-primary">View All Posts</a>
+      <a href="/about" class="btn btn-outline-secondary">About Me</a>
     </div>
-  </section>
+  </nav>
 </div>
+
+<script>
+  // Optional: Add any custom JavaScript for the home page
+  document.addEventListener('DOMContentLoaded', function() {
+    // Example: Add animation or interactivity
+    const heroContent = document.querySelector('.hero-content');
+    heroContent.classList.add('animate__animated', 'animate__fadeIn');
+  });
+</script>
