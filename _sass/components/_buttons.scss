@@ -1,64 +1,126 @@
-// Button styles
+// Material Design Button Styles
 
+// Button Base Styles
 .btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: $border-radius;
-  font-weight: $font-weight-medium;
-  text-decoration: none;
-  transition: all $transition-speed $transition-ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: 64px;
+  height: 36px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  background-color: var(--color-primary);
+  color: white;
+  font-family: $font-family-base;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   cursor: pointer;
-  text-align: center;
-  line-height: 1.4;
-}
-
-.btn-primary {
-  background-color: var(--primary-color);
-  color: white;
+  user-select: none;
+  vertical-align: middle;
+  text-decoration: none;
   
+  // Elevation and Transition
+  box-shadow: material-shadow(1);
+  transition: 
+    background-color 0.3s #{$transition-easing},
+    box-shadow 0.3s #{$transition-easing},
+    transform 0.3s #{$transition-easing};
+
+  // Hover State
   &:hover {
-    background-color: var(--primary-dark);
+    background-color: darken(var(--color-primary), 10%);
+    box-shadow: material-shadow(2);
     transform: translateY(-2px);
-    box-shadow: var(--shadow);
   }
-}
 
-.btn-secondary {
-  background-color: var(--secondary-color);
-  color: white;
-  
-  &:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
+  // Active/Pressed State
+  &:active {
+    background-color: darken(var(--color-primary), 15%);
+    box-shadow: material-shadow(3);
+    transform: translateY(1px);
   }
-}
 
-.btn-outline {
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  background-color: transparent;
-  
-  &:hover {
-    background-color: var(--primary-color);
+  // Focus State
+  &:focus {
+    outline: none;
+    box-shadow: 
+      material-shadow(2),
+      0 0 0 4px rgba(var(--color-primary), 0.3);
+  }
+
+  // Button Variants
+  &-primary {
+    background-color: var(--color-primary);
     color: white;
-    transform: translateY(-2px);
   }
-}
 
-.btn-small {
-  padding: 8px 16px;
-  font-size: 0.9rem;
-}
+  &-secondary {
+    background-color: var(--color-secondary);
+    color: white;
+  }
 
-.btn-large {
-  padding: 14px 28px;
-  font-size: 1.1rem;
-}
+  &-outline {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    box-shadow: none;
 
-.btn-block {
-  display: block;
-  width: 100%;
+    &:hover {
+      background-color: rgba(var(--color-primary), 0.1);
+      box-shadow: none;
+    }
+  }
+
+  // Button Sizes
+  &-sm {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 0.75rem;
+  }
+
+  &-lg {
+    height: 48px;
+    padding: 0 24px;
+    font-size: 1rem;
+  }
+
+  // Dark Mode Styles
+  .dark-mode & {
+    background-color: var(--color-dark-primary);
+    color: white;
+
+    &:hover {
+      background-color: lighten(var(--color-dark-primary), 10%);
+    }
+
+    &-outline {
+      border-color: var(--color-dark-primary);
+      color: var(--color-dark-primary);
+
+      &:hover {
+        background-color: rgba(var(--color-dark-primary), 0.1);
+      }
+    }
+  }
+
+  // Disabled State
+  &:disabled {
+    background-color: rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.26);
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none;
+
+    .dark-mode & {
+      background-color: rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.26);
+    }
+  }
 }
 
 // Button groups

@@ -10,13 +10,15 @@ Explore cutting-edge insights in software engineering, AI, and cloud technologie
 ## Latest Blog Posts
 
 {% for post in site.posts limit:3 %}
-### [{{ post.title }}]({{ post.url }})
+### [{{ post.title }}]({{ site.baseurl }}{{ post.url }})
 
 **{{ post.date | date: "%B %d, %Y" }}**
 
 {{ post.description }}
 
-[Read More]({{ post.url }})
+[Read More]({{ site.baseurl }}{{ post.url }})
 
 ---
 {% endfor %}
+
+[View All Posts]({{ site.baseurl }}/blog)

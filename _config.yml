@@ -1,7 +1,9 @@
 # Site settings
 title: "Sharded Insights"
 description: "Exploring software engineering, AI, cloud technologies, and innovative tech solutions. Join me in unraveling complex tech concepts."
-baseurl: "" # empty for user/organization site
+baseurl: "" # The subpath of your site, e.g. /blog/
+url: "https://praveenkannan.github.io" # The base hostname & protocol for your site
+domain: "praveenkannan.github.io"
 
 # SEO and Privacy Settings
 webmaster_verifications:
@@ -33,22 +35,16 @@ plugins:
   - jekyll-include-cache
   - jekyll-compress-images
 
-# Theme-specific settings
+# Theme Configuration
 hydejack:
   theme: hydecorp/hydejack@v9.1.6
-logo: /assets/img/logo.png
-favicon: /assets/img/favicon.png
-accent_image: /assets/img/sidebar-bg.jpg
-accent_color: '#202020'
-
-# Customization
-theme_color: '#202020'
-hydejack:
   dark_mode:
     dynamic: true
     sunrise: 6
     sunset: 18
     icon: true
+  
+  # Enhanced customization
   no_drawer: false
   no_navbar: false
   no_search: false
@@ -56,9 +52,25 @@ hydejack:
   no_push_state: false
   no_toc: false
   no_third_party: false
+  
+  # Performance and Offline Support
   offline:
     enabled: true
-    cache_version: 1
+    cache_version: 2  # Increment to force cache refresh
+
+# Typography and Design
+logo: /assets/img/logo.png
+favicon: /assets/img/favicon.png
+accent_image: /assets/img/sidebar-bg.jpg
+accent_color: '#3498db'
+theme_color: '#3498db'
+
+# Performance Optimization
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: [html, head, body]
 
 # Navigation - Unix-style naming
 menu:
@@ -81,10 +93,11 @@ collections:
 paginate: 5
 paginate_path: "/page:num/"
 
-# SEO settings
+# SEO and Social Sharing
 twitter:
   username: sigpipe
-  card: summary
+  card: summary_large_image
+
 social:
   name: Sharded Insights
   links:
@@ -114,3 +127,9 @@ exclude:
   - README.md
   - LICENSE
   - CNAME
+
+# Permalink structure for blog posts
+permalink: /blog/:year/:month/:day/:title/
+
+# Ensure Jekyll generates links correctly
+relative_permalinks: false
