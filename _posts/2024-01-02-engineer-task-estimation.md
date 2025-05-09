@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: post
 title: "The Art of Engineering Task Estimation"
 date: 2024-01-02
 categories: [Software Engineering, Project Management]

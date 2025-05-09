@@ -1,0 +1,217 @@
+// Blog Post Styling with Material Design Principles
+
+.post-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $spacing-unit * 2;
+  background-color: var(--color-surface);
+  box-shadow: material-shadow(1);
+  border-radius: $border-radius;
+
+  .dark-mode & {
+    background-color: var(--color-dark-surface);
+  }
+}
+
+.post {
+  // Post Header
+  &-header {
+    margin-bottom: $spacing-unit * 2;
+    border-bottom: 2px solid var(--color-secondary);
+    padding-bottom: $spacing-unit;
+
+    .dark-mode & {
+      border-bottom-color: var(--color-dark-secondary);
+    }
+  }
+
+  // Post Title
+  &-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: $spacing-unit;
+
+    .dark-mode & {
+      color: var(--color-dark-primary);
+    }
+  }
+
+  // Post Meta Information
+  &-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+
+    time {
+      font-weight: 500;
+    }
+
+    .dark-mode & {
+      color: var(--color-dark-text-secondary);
+    }
+  }
+
+  // Post Categories
+  &-categories {
+    display: flex;
+    gap: $spacing-unit / 2;
+
+    &-item {
+      background-color: rgba(var(--color-primary), 0.1);
+      color: var(--color-primary);
+      padding: 0.25rem 0.5rem;
+      border-radius: $border-radius;
+      font-size: 0.8rem;
+      font-weight: 500;
+
+      .dark-mode & {
+        background-color: rgba(var(--color-dark-primary), 0.2);
+        color: var(--color-dark-primary);
+      }
+    }
+  }
+
+  // Post Content
+  &-content {
+    line-height: 1.7;
+    color: var(--color-text-primary);
+
+    .dark-mode & {
+      color: var(--color-dark-text-primary);
+    }
+
+    h2, h3, h4 {
+      margin-top: $spacing-unit * 2;
+      margin-bottom: $spacing-unit;
+      color: var(--color-primary);
+
+      .dark-mode & {
+        color: var(--color-dark-primary);
+      }
+    }
+
+    p {
+      margin-bottom: $spacing-unit;
+    }
+
+    code {
+      background-color: rgba(0, 0, 0, 0.05);
+      border-radius: $border-radius;
+      padding: 0.2rem 0.4rem;
+      font-size: 0.9rem;
+
+      .dark-mode & {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    pre {
+      background-color: #f4f4f4;
+      border-radius: $border-radius;
+      padding: $spacing-unit;
+      overflow-x: auto;
+      box-shadow: material-shadow(1);
+      margin-bottom: $spacing-unit;
+
+      .dark-mode & {
+        background-color: #2d2d2d;
+      }
+    }
+  }
+
+  // Post Tags
+  &-tags {
+    margin-top: $spacing-unit * 2;
+    padding-top: $spacing-unit;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+    .dark-mode & {
+      border-top-color: rgba(255, 255, 255, 0.1);
+    }
+
+    h3 {
+      margin-bottom: $spacing-unit;
+      color: var(--color-text-secondary);
+
+      .dark-mode & {
+        color: var(--color-dark-text-secondary);
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: $spacing-unit / 2;
+    }
+
+    &-item {
+      background-color: rgba(var(--color-primary), 0.1);
+      color: var(--color-primary);
+      padding: 0.25rem 0.5rem;
+      border-radius: $border-radius;
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: rgba(var(--color-primary), 0.2);
+      }
+
+      .dark-mode & {
+        background-color: rgba(var(--color-dark-primary), 0.2);
+        color: var(--color-dark-primary);
+
+        &:hover {
+          background-color: rgba(var(--color-dark-primary), 0.3);
+        }
+      }
+    }
+  }
+
+  // Post Navigation
+  &-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: $spacing-unit * 2;
+    padding-top: $spacing-unit;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+    .dark-mode & {
+      border-top-color: rgba(255, 255, 255, 0.1);
+    }
+
+    a {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: var(--color-text-secondary);
+      transition: color 0.3s;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+
+      .dark-mode & {
+        color: var(--color-dark-text-secondary);
+
+        &:hover {
+          color: var(--color-dark-primary);
+        }
+      }
+    }
+
+    .nav-label {
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .post-title {
+      font-weight: 500;
+    }
+  }
+}
