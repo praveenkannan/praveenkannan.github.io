@@ -1,9 +1,7 @@
 # Site settings
-title: "Sharded Insights | Tech Blog by Praveen Kannan"
-email: praveen7484@gmail.com
+title: "Sharded Insights"
 description: "Exploring software engineering, AI, cloud technologies, and innovative tech solutions. Join me in unraveling complex tech concepts."
 baseurl: "" # empty for user/organization site
-url: "https://shardedinsights.github.io" # the base hostname & protocol for your site
 
 # SEO and Privacy Settings
 webmaster_verifications:
@@ -22,17 +20,6 @@ defaults:
         type: article
       twitter:
         card: summary_large_image
-
-# Author information
-author:
-  name: "Praveen Kannan"
-  bio: >-
-    Technology leader specializing in distributed systems architecture and scalable data solutions.
-    Solving enterprise-scale challenges with elegant technical design and strategic thinking.
-  location: "Global"
-  twitter: "@praveenkannan"
-  github: praveenkannan
-  linkedin: "praveenkannan"
 
 # Build settings
 markdown: kramdown
@@ -76,13 +63,13 @@ hydejack:
 # Navigation - Unix-style naming
 menu:
   - title: ~/about
-    url: /about/
+    url: /_layouts/about.html
   - title: ~/projects
-    url: /projects/
+    url: /_layouts/projects.html
   - title: ~/blog
-    url: /blog/
+    url: /_layouts/blog.html
   - title: ~/contact
-    url: /contact/
+    url: /_layouts/contact.html
 
 # Collections
 collections:
@@ -93,18 +80,6 @@ collections:
 # Pagination settings
 paginate: 5
 paginate_path: "/page:num/"
-
-# Footer settings
-footer_links:
-  - title: GitHub
-    url: https://github.com/praveenkannan
-    icon: fab fa-github
-  - title: LinkedIn
-    url: https://www.linkedin.com/in/praveenkannan
-    icon: fab fa-linkedin
-  - title: Twitter
-    url: https://twitter.com/sigpipe
-    icon: fab fa-twitter
 
 # SEO settings
 twitter:
